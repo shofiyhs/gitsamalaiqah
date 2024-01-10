@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    background-Image: url(Images/bgticket.jpg);
+    background-size: cover;
+  }
+  .concert-container{
+    width: 80%;
+    height: auto;
+    border: 5px solid rgba(255, 255, 255, 0.4);
+    background: none;
+    backdrop-filter: blur(5px);
+    position: relative;
+    box-shadow: 0 50px 55px -10px #000;
+  }
+  img{
+    float: right;
+  }
+  
+  .image-container img {
+   margin-left: auto;
+  }
+  
+  .title{
+    position: absolute;
+    color: #fff;
+    padding: 50px 88px;
+    font-size: 85px;
+    top: 100px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing:10px;
+  }
+  h4{
+    position: absolute;
+    font-size: 20px;
+    color:black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    top: 190px;
+    left: 102px
+  }
+  h1{
+   position: absolute;
+   font-size: 36px;
+   color:#fff;
+   font-family:'Times New Roman', Times, serif;
+   text-transform:uppercase;
+   letter-spacing:5px;
+   top: 320px;
+   left: 100px;
+  }
+  .dis{
+    position: absolute;
+    top: 150px;
+    left: 53px;
+    padding: 80px 80px;
+    color: #b22222;
+    font-size: 30px;
+    font-family: fantasy;
+  }
+  button{
+    position: absolute;
+    top: 77%;
+    left: 5%;
+    padding: 20px 50px;
+    font-size: 20px;
+    border: 2px solid #f1f1f1;
+    background: none;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  button:hover{
+    color:#000;
+     
+
+  }
+
+  

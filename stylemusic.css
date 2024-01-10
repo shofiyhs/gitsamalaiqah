@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+.navbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 320px;
+    background-color: #f4f4f4;
+  }
+  
+  ul {
+    list-style-type: none;
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    margin-left: auto;
+    font-size: 17px;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  li a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    background-color: #333;
+    margin-right: 5px;
+  }
+  
+  li a.active {
+    background-color: #5340ff;
+    color: white;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #212121;
+    color: white;
+  } 
+html{
+    font-size: 62.5%;
+}
+
+.container{
+    background: #c4c2c2;
+    height: 1500px ;
+}
+
+.container .heading{
+    font-size: 5rem;
+    padding: 2rem 0;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 0 .5rem 1rem #000;
+    color: #100f0f;
+}
+
+.container .music-container{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.container .music-container .box{
+    height: 16rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    background: #482a41;
+    border-radius: 1rem;
+    text-shadow: 0 .5rem 1rem #000;
+    overflow: hidden;
+    margin: 2rem;
+}
+
+.container .music-container .box .image{
+    height: 100%;
+    width: 25%;
+}
+
+.container .music-container .box .image img{
+    height: 100%;
+    width: 100%;
+}
+
+.container .music-container .box .music{
+    width: 75%;
+}
+
+.container .music-container .box .music audio{
+    width: 100%;
+    outline: none;
+}
+.container .music-container .box .music audio::-webkit-control-enclosure{
+    background: none;
+}
+@media (max-width:600px){
+    .container .music-container .box{
+        height:27rem;
+        width:90%;
+        flex-flow: column;
+    }
+.container .music-container .box .image{
+    height:80%;
+    width:100%;
+}
+.container .music-container .box .music{
+    height:20%;
+    width:100%;
+}
+}

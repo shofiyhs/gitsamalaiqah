@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concert Ticket Booking</title>
+  <link rel="stylesheet" href="./stylebookingticket.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+        <a href="learnmore.html">Learnmore</a>
+        <a href="abouttaylor.html">About</a>
+        <a href="bookingticket.html" class="active">Booking</a>
+        <a href="RegisterLogin.html">Sign in</a>
+      </li>
+    </ul>
+  </nav>
+  <h1>Welcome, Order Your Ticket Here!</h1>
+  <div class="images">
+    <img src="images/taylorstagenew.jpg" alt="Stage Image">
+    <img src="images/pricelist.png" alt="Price List">
+  </div>
+  <div class="mx-auto">
+    <div class="card">
+      <div class="card-header">
+        Order Tickets In This Column
+      </div>
+      <div class="card-body">
+        <form action="#" method="POST">
+          <div class="mb-3 row">
+            <label for="nama" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="nama" name="nama" value="" required>
+            </div>
+          </div>
+          <div class="container">
+            <label for="phone_number_input">Masukkan Nomor Telepon:</label>
+            <input type="tel" id="phone_number_input" name="phone_number_input" pattern="[0-9]{10,12}" placeholder="Contoh: 081234567890" required>
+            <small>Contoh: 081234567890 (10-12 digit angka)</small>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="mb-3 row">
+            <label for="jenis_tiket" class="col-sm-2 col-form-label">Jenis Tiket</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="jenis_tiket" id="jenis_tiket" onchange="calculatePrice()" required>
+                <option value="">-Pilih Jenis Tiket-</option>
+                <option value="DIAMOND">DIAMOND</option>
+                <option value="RUBY">RUBY</option>
+                <option value="GOLD">GOLD</option>
+                <option value="SILVER">SILVER</option>
+                <option value="BRONZE">BRONZE</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="harga_tiket" class="col-sm-2 col-form-label">Harga Tiket</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="harga_tiket" readonly required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="jumlah_tiket" class="col-sm-2 col-form-label">Jumlah Tiket</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="jumlah_tiket" min="1" value="1" oninput="calculateTotalPrice()" required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="total_harga" class="col-sm-2 col-form-label">Total Harga</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="total_harga" readonly required>
+            </div>
+          </div>                         
+          <div class="col-12">
+            <button type="button" onclick="showAlert()" id="submitBtn" class="btn btn-primary">Save Data</button>
+
+          </div>                          
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    // Fungsi untuk menghitung harga tiket
+    function calculatePrice() {
+      var jenisTiket = document.getElementById("jenis_tiket").value;
+      var hargaTiket = 0;
+
+      switch (jenisTiket) {
+        case "DIAMOND":
+          hargaTiket =  4000000;
+          break;
+        case "RUBY":
+          hargaTiket =  3000000;
+          break;
+        case "GOLD":
+          hargaTiket =  2000000;
+          break;
+        case "SILVER":
+          hargaTiket =  1250000;
+          break;
+        case "BRONZE":
+          hargaTiket =  800000;
+          break;
+      }
+
+      document.getElementById("harga_tiket").value = hargaTiket;
+    }
+
+    // Fungsi untuk menghitung total harga
+    function calculateTotalPrice() {
+      var ticketPrice = parseFloat(document.getElementById("harga_tiket").value);
+      var ticketQuantity = parseInt(document.getElementById("jumlah_tiket").value);
+      
+      if (isNaN(ticketPrice) || isNaN(ticketQuantity)) {
+        document.getElementById("total_harga").value = "Invalid input";
+      } else {
+        var totalPrice = ticketPrice * ticketQuantity;
+        document.getElementById("total_harga").value = totalPrice;
+      }
+    }
+
+    // Fungsi untuk membeli tiket
+    function buyTicket() {
+      alert("Tiket berhasil dibeli");
+      window.location.href = "ticket.html";
+    }
+    function showAlert() {
+      var name = document.getElementById("nama").value;
+      var phoneNumber = document.getElementById("phone_number_input").value;
+      var ticketQuantity = document.getElementById("jumlah_tiket").value;
+
+      if (name === "" || phoneNumber === "" || ticketQuantity === "") {
+        alert("Data tidak boleh kosong");
+      } else {
+        alert("Data berhasil disimpan");
+        document.getElementById("submitBtn").innerHTML = "Data berhasil disimpan";
+        document.getElementById("submitBtn").disabled = true;
+        window.location.href ="Concert.html";
+      }
+    }
+
+  </script>
+</body>
+</html>

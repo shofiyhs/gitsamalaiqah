@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RegisterLogin</title>
+  <link rel="stylesheet" href="./styleRegisterLogin.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+        <a href="music.html">Music</a>
+        <a href="learnmore.html">Learnmore</a>
+        <a href="abouttaylor.html">About</a>
+        <a href="RegisterLogin.html" class="active">Sign in</a>
+      </li>
+    </ul>
+  </nav>
+<div class="wrapper">
+      <div class="title-text">
+        <div class="title login">Form Login</div>
+        <div class="title signup">Form Register</div>
+      </div>
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slide" id="login" checked>
+          <input type="radio" name="slide" id="signup">
+          <label for="login" class="slide login">Login</label>
+          <label for="signup" class="slide signup">Regist</label>
+          <div class="slider-tab"></div>
+        </div>
+        <div class="form-inner">
+          <form action="bookingticket.html" class="login">
+            <pre>
+            </pre>
+            <div class="field">
+              <input type="email" placeholder="Enter Email" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Enter Password" required>
+            </div>
+            <div class="pass-link"><a href="#">Forgot password?</a></div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">Create account?<a href=""> Sign up now</a></div>
+          </form>
+          <form action="#" class="signup">
+            <div class="field">
+              <input type="text" placeholder="Enter Name" required>
+            </div>
+            <div class="field">
+              <input type="email" placeholder="Enter Email" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Enter Password" required>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Ulangi password" required>
+            </div>
+            <div class="field btn">
+              <div class="btn-layer"></div>
+              <input type="submit" value="Daftar">
+            </div>
+            <div class="signup-link">Already have an account? <a href="bookingticket.html">login</a></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  <script  src="./script.js"></script>
+
+</body>
+</html>
